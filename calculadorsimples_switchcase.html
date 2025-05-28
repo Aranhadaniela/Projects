@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang "pt-BR">
+    <meta charset="UTF-8">
+    <title>Calculadora usando switch case</title>
+
+    <script>
+        var n1= Number(prompt('insira n1'));
+        var n2 = Number(prompt('insira n2'));
+        var n3 = prompt('insira o símbolo para que o cálculo seja realizado');
+
+        switch(n3){
+            case "+":
+               document.write('Resultado da soma: '+ (n1+n2));
+               break;
+            case "-":
+                document.write("Resultado da subtração: "+(n1-n2));
+                break;
+            case "/":
+                if(n2!=0){
+                 document.write("Resultado da divisão: "+(n1/n2));
+                }else {
+                    alert('operação inválida');
+                }
+                break;
+            case "*":
+               
+                document.write('Resultado da multiplicação'+(n1*n2));
+                break;
+                default: document.write('<h1 style = "color:red;"> Operação inválida,esse símbolo não existe!  </h1>');
+            }
+        </script>

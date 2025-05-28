@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang = "pt-BR">
+	<meta charset="UTF-8">
+	<script>
+var d = 1;
+var n = Number(prompt('insira o número que você deseja descobrir os divisores exatos'));
+document.write('<h1 style="color:blue;font-size:20px;">Os divisores exatos de '+n+' são: </h1><br>');
+while(d<=n ){
+	if(n%d ==0){       //se o resto é 0, ou seja, o divisor é exato. ;
+		document.write(`<span style ="font-size:30px">${d}&nbsp&nbsp</span>`)
+
+	}
+	d++
+}
+
+
+	</script>

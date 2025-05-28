@@ -1,0 +1,23 @@
+
+<script>
+var a = alert('Descubra se seu número é primo ou não');
+var N = Number(prompt("Informe um valor"));
+var divisores = 0;
+if( N >=2) {
+  
+  
+
+for (var i = 1; i <= N; i++) {
+  if (N % i == 0) {
+    divisores++;
+  }
+}
+
+if (divisores == 2) {
+  document.write(N + " é primo.");
+} else {
+  document.write(N + " não é primo.");
+}}else {
+  document.write("Número inválido. Informe um número positivo.");
+}
+</script>

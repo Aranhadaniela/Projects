@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<title>Sequência de Fibonacci</title>
+    <meta charset="UTF-8">
+<script>
+    var a =0;
+    var b = 1;
+    var rec= Number(prompt("Digite a quantidade de termos da sequência de Fibonacci:"));
+    var cont = 2;
+    while(cont<rec){
+        var c = a + b;
+	document.write(c + "<br>");
+	a = b;
+	b = c;
+	cont++;
+
+        
+   
+    }
+   
+</script>
