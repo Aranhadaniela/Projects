@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <meta charset="UTF-8">
+    <title>ENE</title> 
+  <p1>
+     <h1>Relatório de energia elétrica das cidades</h1>
+    <script>
+       
+        var rec = Number(prompt("Insira com quantas cidades você deseja calcular o consumo"));
+        
+     
+        var cidades = new Array(rec);
+        var consumo = new Array(rec);
+        var limite =1000000;
+       
+        var p;
+
+        for (p = 0; p<rec; p++) {
+            cidades[p] = prompt("Insira o nome da cidade " + (p + 1) + ":");
+            consumo[p] = Number(prompt("Insira o consumo em MWh da cidade " + cidades[p] + ":"));
+        }
+        var cidadesAcima = [];
+        var consumoAcima = [];
+        var ca = 0;
+for( p = 0; p<rec ; p++ ){
+    if (consumo[p] > limite) {
+        cidadesAcima[ca]=cidades[p];//agora,as cidades acima do consnumo esperado estão dentro da variavel cidadesAcima
+        consumoAcima[ca]=consumo[p];
+        ca++; //controla a posiçao do vetor de cidades acima
+}}
+        var quantidade = consumoAcima.length; //variável que informa quantos vetores de cidade  tem
+        
+       var m,n;
+       //a variavel m vai controlar quantas vezes se passa pelo vetor 
+       // e a variavel n compara os vetores vizinhos 
+
+       //um está dentro do outro,então é como se eles trabalhassem juntos
+
+       for( p=0; p<rec-1  ;p++ ){     //é (menos um) porque o ultimo espaço ja sera o menor pois todos os valores ja foram comparados
+
+        for(p=0 ; p<rec-1  ;p++){
+if(consumo[p]<consumo[p+1]) { //hora de ordenar as cidades em maior consumo para menor 
+
+    var CC = consumo[p];
+consumo[p]=consumo[p+1];
+CC=consumoAcima[p+1];//ex o primeiro vetor é menor do que o segundo entao o que estava em segundo vai ocupar o espaço do primeiro.
+
+var CC2 = cidades[p];//também no n porque as posiçoes sao as mesmas
+cidades[p]=cidades[p+1];
+cidades[p+1]=CC2;//troca-se tambem as posiçoes dos nomes das cidades, ja que a informação de qtd de kw está atrelada a uma cidade específica na mesma posição
+
+}
+for(p=0;p<rec;p++){
+    document.write(`${p}. ${cidades[p]} consumiu ${consumo[p]}MWh<br>`);
+}
+
+}
+    
+}
+  document.write('<span style="color:blue; font-size:30px;">Cidades que ultrapassaram o limite de 1000000 MWh </span><br>');
+
+
+if (quantidade == 0 ){
+    document.write(`<span style= "font-size:50px;">Nenhuma cidade ultrapassou o limite esperado de 1000000MWh</span>`);
+ 
+} else if (quantidade == 1){
+    document.write('<span style="color:orange;font-size:20px;">Apenas uma cidade obteve um consumo maior do que o esperado</span>');
+
+}else{
+    document.write(`<span style ="color:red;font-size:30px;">No total &nbsp${quantidade}cidades ultrapassaram o limite esperado</span>`);
+}
+
+
+
+
+
+
+
+       
+    </script>
+</html></p1>
