@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    </head>
+    <body> <div style="text-align: center;">
+    <script>
+        var x = Number(prompt("Insira a quantidade de produtos a serem comparados"));
+        var nmprod=[];
+        var qtdprod=[];
+        var prcprod=[];
+        for(var p = 0;p<x;p++){
+            nmprod[p]=prompt("Insira o nome do produto");
+            qtdprod[p]=Number(prompt(`Insira a quantidade de ${nmprod[p]}`));
+            prcprod[p]=Number(prompt(`Agora, insira o valor de ${nmprod[p]}`));
+
+
+        }
+        for(var j =0;j<x;j++){
+            for(var i =0;i<x-1-j;i++){
+                if(prcprod[i]<prcprod[i+1]){
+                   [prcprod[i], prcprod[i + 1]] = [prcprod[i + 1], prcprod[i]];
+                   [qtdprod[i], qtdprod[i + 1]] = [qtdprod[i + 1], qtdprod[i]];
+                   [nmprod[i], nmprod[i + 1]] = [nmprod[i + 1], nmprod[i]];
+
+
+                }
+               
+            }
+        }
+        var produtomaiscaro = nmprod[0];
+        var prccaro = prcprod[0];
+        var qtdcaro = qtdprod[0];
+        
+            for(var j =0;j<x;j++){
+            for(var i =0;i<x-1-j;i++){
+                if(qtdprod[i]>qtdprod[i+1]){
+                   
+                   [qtdprod[i], qtdprod[i + 1]] = [qtdprod[i + 1], qtdprod[i]];
+                   [prcprod[i], prcprod[i + 1]] = [prcprod[i + 1], prcprod[i]];
+                   [nmprod[i], nmprod[i + 1]] = [nmprod[i + 1], nmprod[i]];
+
+
+                }
+               
+            }
+        }
+        var menosprod =qtdprod[0];
+        var nmmenos =nmprod[0];
+        var prcmenos =prcprod[0];
+     document.write(`O produto mais caro é ${produtomaiscaro},custando ${prccaro} por cada um dos ${qtdcaro}  do estoque<br><br>`);
+    document.write(`O produto em menor quantidade é ${nmmenos},custando ${prcmenos} por cada um dos ${menosprod}  do estoque`);
+       
+        </script></div></body>
